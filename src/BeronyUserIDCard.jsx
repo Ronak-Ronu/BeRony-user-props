@@ -17,6 +17,8 @@ import { TextureLoader } from "three";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
+
+
 function BeronyIDCard({ userData }) {
   const band = useRef();
   const fixed = useRef();
@@ -248,16 +250,16 @@ function BeronyIDCard({ userData }) {
                 />
               </mesh>
             )}
-            {/* Total Posts */}
             <Text3D
               position={[-0.7, -0.9, 0.02]}
               font="/fonts/helvetiker_regular.typeface.json"
               size={0.05}
               height={0.005}
             >
-              Posts: {userData.totalPosts || "0"}
-              <meshStandardMaterial color="#ddd" />
+              {`Total Posts: ${userData.totalPosts || 0}`}
+              <meshStandardMaterial color="#ccc" />
             </Text3D>
+
             {logoTexture && (
               <mesh position={[0.45, -0.7, 0.02]}>
                 <planeGeometry args={[0.3, 0.3]} />
